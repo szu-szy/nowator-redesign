@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Specyfikacja projektowa - Nowator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="demo-badge">Mockup - kierunek redesignu na realnych zdjęciach marki. Nie wdrożone. Do akceptacji przed dalszymi pracami.</div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="img/logo-nowator.png" alt="Nowator - Biuro Podróży" class="nav__logo-img">
+    </a>
+    <nav class="nav__links">
+      <a href="index.html#oferta">Oferta</a>
+      <a href="index.html#kierunki">Kierunki</a>
+      <a href="index.html#autokar">Wynajem autokaru</a>
+      <a href="index.html#historia">O nas</a>
+    </nav>
+    <a href="index.html" class="btn btn--outline nav__cta">Wróć do strony</a>
+    <button class="nav__burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="spec-hero">
+    <div class="wrap">
+      <div class="spec-hero__crumb"><a href="index.html">Strona główna</a> / Specyfikacja</div>
+      <h1>Specyfikacja<br>projektowa</h1>
+      <p>Kompletny zestaw tokenów i komponentów użytych w redesignie Nowator - kolory, typografia, odstępy, siatka i komponenty. Wszystkie wartości pobrane bezpośrednio z kodu mockupu, nie szacowane.</p>
+    </div>
+  </section>
+
+  <!-- KOLORY -->
+  <section class="spec-section">
+    <div class="wrap">
+      <h2>Kolory</h2>
+      <p>Paleta wyprowadzona WYŁĄCZNIE z realnego logo klienta - jeden odcień (H247°, próbkowany pikselowo z logo klienta), skala jasności/nasycenia. Zero drugiego, wymyślonego koloru akcentu.</p>
+      <div class="swatches">
+        <div class="swatch"><div class="swatch__color" style="background:#FFFFFF;border-bottom:1px solid var(--line)"></div><div class="swatch__meta"><code>#FFFFFF</code><span>--bg - tło strony</span></div></div>
+        <div class="swatch"><div class="swatch__color" style="background:#100D2B"></div><div class="swatch__meta"><code>#100D2B</code><span>--ink - tekst podstawowy</span></div></div>
+        <div class="swatch"><div class="swatch__color" style="background:#4E4979"></div><div class="swatch__meta"><code>#4E4979</code><span>--ink-soft - akapity, opisy</span></div></div>
+        <div class="swatch"><div class="swatch__color" style="background:#635E8D"></div><div class="swatch__meta"><code>#635E8D</code><span>--ink-faint - metadane, etykiety</span></div></div>
+        <div class="swatch"><div class="swatch__color" style="background:#EAE9F7"></div><div class="swatch__meta"><code>#EAE9F7</code><span>--surface-2 - tło kart, sekcji alt</span></div></div>
+        <div class="swatch"><div class="swatch__color" style="background:#312780"></div><div class="swatch__meta"><code>#312780</code><span>--indigo - MAREK: CTA, linki, ikony, statystyki (realny kolor z logo)</span></div></div>
+        <div class="swatch"><div class="swatch__color" style="background:#1E184E"></div><div class="swatch__meta"><code>#1E184E</code><span>--indigo-dark - stopka, hover przycisków</span></div></div>
+        <div class="swatch"><div class="swatch__color" style="background:#8B81DA"></div><div class="swatch__meta"><code>#8B81DA</code><span>--indigo-light - akcent tekstowy na ciemnym tle</span></div></div>
+      </div>
+      <p style="margin-top:16px;font-size:13px">Metoda: HSL tego samego odcienia co <code>#312780</code> (H 247°, S 53%), zmienna jasność - <code>--ink</code> to L11%, <code>--indigo</code> to realne L33% z logo, <code>--indigo-light</code> to L68%. Każda para tekst/tło przeliczona programowo wg wzoru WCAG (≥4.5:1).</p>
+    </div>
+  </section>
+
+  <!-- TYPOGRAFIA -->
+  <section class="spec-section">
+    <div class="wrap">
+      <h2>Typografia</h2>
+      <p>Jeden font: Plus Jakarta Sans (wagi 500/600/700/800) - geometryczno-humanistyczny sans, ciepły i nowoczesny, jednocześnie czytelny w danych (terminy, ceny). Zero serifów, zero drugiego fontu do body.</p>
+
+      <div class="type-sample">
+        <div class="type-sample__demo"><h1 style="font-size:clamp(34px,5vw,54px);font-weight:800">Wycieczki i pielgrzymki zaplanowane przez ludzi, nie algorytm.</h1></div>
+        <div class="type-sample__meta"><b>Użycie:</b> H1 hero<br><b>Waga:</b> 800<br><b>Rozmiar:</b> clamp(34px, 5vw, 54px)<br><b>Line-height:</b> 1.08 &middot; <b>Litery:</b> -0.02em</div>
+      </div>
+
+      <div class="type-sample">
+        <div class="type-sample__demo"><h2 style="font-size:clamp(26px,3vw,36px);font-weight:800">Sześć sposobów na wyjazd.</h2></div>
+        <div class="type-sample__meta"><b>Użycie:</b> H2 nagłówki sekcji<br><b>Waga:</b> 800<br><b>Rozmiar:</b> clamp(26px, 3vw, 36px)</div>
+      </div>
+
+      <div class="type-sample">
+        <div class="type-sample__demo"><span class="eyebrow" style="margin:0">Nasza oferta</span></div>
+        <div class="type-sample__meta"><b>Użycie:</b> etykieta nad nagłówkiem sekcji<br><b>Waga:</b> 700 &middot; <b>Rozmiar:</b> 13px &middot; kolor var(--indigo)</div>
+      </div>
+
+      <div class="type-sample">
+        <div class="type-sample__demo"><p style="font-size:15.5px;line-height:1.6;color:var(--ink-soft);max-width:44ch">Wycieczki grupowe i indywidualne, pielgrzymki, wyjazdy szkolne, wynajem autokarów i ubezpieczenia - jedna organizacja, 60+ gotowych tras.</p></div>
+        <div class="type-sample__meta"><b>Użycie:</b> akapity, opisy sekcji<br><b>Waga:</b> 500 &middot; <b>Rozmiar:</b> 15-16.5px &middot; <b>Line-height:</b> 1.6<br><b>Max-width:</b> 40-52ch (czytelność wiersza)</div>
+      </div>
+
+      <div class="type-sample">
+        <div class="type-sample__demo"><span style="font-weight:800;font-size:18px">Grecja</span><br><span style="font-size:12.5px;color:var(--ink-faint)">Santorini &middot; 8 dni</span></div>
+        <div class="type-sample__meta"><b>Użycie:</b> nazwa i meta kierunku (kafelek)<br><b>Rozmiar:</b> 18px waga 800 (nazwa) / 12.5px waga 500 (meta)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ODSTĘPY -->
+  <section class="spec-section">
+    <div class="wrap">
+      <h2>Odstępy</h2>
+      <p>Skala nieregularna, dobrana pod kontekst - każda wartość ma konkretne zastosowanie.</p>
+      <div class="spec-table-wrap">
+        <table class="spec-table">
+          <thead><tr><th>Token</th><th>Wartość</th><th>Zastosowanie</th></tr></thead>
+          <tbody>
+            <tr><td>Gap kafelków oferty</td><td><code>18px</code></td><td>.tiles</td></tr>
+            <tr><td>Gap kafelków kierunków</td><td><code>16px</code></td><td>.dest-tiles</td></tr>
+            <tr><td>Gap split (mobile)</td><td><code>32px</code></td><td>.split - Autokar / Historia</td></tr>
+            <tr><td>Gap split (desktop)</td><td><code>64px</code></td><td>.split, &gt;860px</td></tr>
+            <tr><td>Padding sekcji (mobile)</td><td><code>64px 0</code></td><td>.section</td></tr>
+            <tr><td>Padding sekcji (desktop)</td><td><code>88px 0</code></td><td>.section, &gt;860px</td></tr>
+            <tr><td>Padding karty wyszukiwarki</td><td><code>10px</code> (zewn.) / <code>12px 18px</code> (pole)</td><td>.search__card, .search__field</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIATKA -->
+  <section class="spec-section">
+    <div class="wrap">
+      <h2>Siatka i breakpointy</h2>
+      <div class="spec-table-wrap">
+        <table class="spec-table">
+          <thead><tr><th>Token</th><th>Wartość</th><th>Zastosowanie</th></tr></thead>
+          <tbody>
+            <tr><td>Kontener</td><td><code>max-width: 1280px</code></td><td>.wrap - wszystkie sekcje</td></tr>
+            <tr><td>Padding desktop</td><td><code>0 32px</code></td><td>margines boczny .wrap, &gt;860px</td></tr>
+            <tr><td>Padding mobile</td><td><code>0 20px</code></td><td>margines boczny .wrap, &lt;860px</td></tr>
+            <tr><td>Breakpoint</td><td><code>860px</code></td><td>jedyny punkt przełamania</td></tr>
+            <tr><td>Kafelki oferty</td><td><code>3 kolumny &rarr; 2 (mobile)</code></td><td>.tiles</td></tr>
+            <tr><td>Kafelki kierunków</td><td><code>4 kolumny &rarr; 2 (mobile)</code></td><td>.dest-tiles</td></tr>
+            <tr><td>Kafelek oferty</td><td><code>aspect-ratio: 3/4</code></td><td>.tile, object-fit: cover</td></tr>
+            <tr><td>Kafelek kierunku</td><td><code>aspect-ratio: 4/5</code></td><td>.dest-tiles .tile</td></tr>
+            <tr><td>Zdjęcie split</td><td><code>aspect-ratio: 4/3</code></td><td>.split__media img</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRZYCISKI -->
+  <section class="spec-section">
+    <div class="wrap">
+      <h2>Przyciski i pola</h2>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;padding:24px;border:1px solid var(--line);border-radius:var(--radius);margin-bottom:24px">
+        <a href="#" class="btn btn--primary">Zobacz kierunki</a>
+        <a href="#" class="btn btn--outline">Zapytaj o termin</a>
+        <a href="#" class="text-link">Zobacz pielgrzymki <span>&rarr;</span></a>
+      </div>
+      <div class="spec-table-wrap">
+        <table class="spec-table">
+          <thead><tr><th>Wariant</th><th>Tło</th><th>Obramowanie</th><th>Radius</th><th>Hover</th></tr></thead>
+          <tbody>
+            <tr><td>Primary (.btn--primary)</td><td><code>var(--indigo)</code></td><td>brak</td><td>2px</td><td>tło &rarr; var(--indigo-dark), cień indygo</td></tr>
+            <tr><td>Outline (.btn--outline)</td><td>transparent</td><td>1.5px solid var(--line)</td><td>2px</td><td>obramowanie &rarr; var(--ink), tło var(--surface-2)</td></tr>
+            <tr><td>Pole formularza</td><td>var(--bg)</td><td>1.5px solid var(--line)</td><td>2px</td><td>focus: obramowanie var(--indigo)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:16px">Promień: <code>2px</code> jedna wartość, wszędzie - karty, kafelki, wyszukiwarka, przyciski, pola. Kanciasta, nie zaokrąglona strona - świadoma decyzja, nie domyślna.</p>
+    </div>
+  </section>
+
+  <!-- WYSZUKIWARKA -->
+  <section class="spec-section">
+    <div class="wrap">
+      <h2>Wyszukiwarka (hero)</h2>
+      <p>Realna, funkcjonalna wyszukiwarka tras - odtwarza istniejącą funkcję <code>/wyszukiwarka/</code> z żywej strony. Struktura zapożyczona od największych biur podróży (Itaka i inne OTA), wykonanie w palecie Nowatora.</p>
+      <div class="spec-table-wrap">
+        <table class="spec-table">
+          <thead><tr><th>Element</th><th>Specyfikacja</th></tr></thead>
+          <tbody>
+            <tr><td>Karta</td><td>biała, radius 14px, cień 0 24px 56px rgba(23,19,53,.24), zachodzi na dół hero (translateY 50%)</td></tr>
+            <tr><td>Pola</td><td>Kierunek / Typ wyjazdu / Termin, oddzielone hairline var(--line)</td></tr>
+            <tr><td>Przycisk</td><td>.btn--primary, pełna wysokość karty</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- KAFELEK -->
+  <section class="spec-section" style="border-bottom:none">
+    <div class="wrap">
+      <h2>Kafelek oferty / kierunku</h2>
+      <div style="max-width:260px;margin-bottom:24px">
+        <a class="tile" style="aspect-ratio:3/4;display:block;position:relative;">
+          <img src="img/grecja.jpg" alt="Grecja">
+          <div class="tile__scrim"></div>
+          <span class="tile__num">01</span>
+          <div class="tile__body"><h3>Grecja</h3><span>Santorini &middot; 8 dni</span></div>
+        </a>
+      </div>
+      <div class="spec-table-wrap">
+        <table class="spec-table">
+          <thead><tr><th>Element</th><th>Specyfikacja</th></tr></thead>
+          <tbody>
+            <tr><td>Zdjęcie</td><td>object-fit: cover, radius 14px, hover: scale(1.06)</td></tr>
+            <tr><td>Scrim</td><td>gradient dolny (rgba(15,12,36,.82)&rarr;0), gwarantuje kontrast tekstu niezależnie od jasności zdjęcia</td></tr>
+            <tr><td>Numer</td><td>pigułka w rogu, tylko w siatce oferty (nie kierunków)</td></tr>
+            <tr><td>Hover karty</td><td>translateY(-4px) + cień</td></tr>
+            <tr><td>Wariant bez zdjęcia</td><td>tło var(--surface-2), wyśrodkowany tekst - kierunki bez zweryfikowanego zdjęcia</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="footer__brand">
+      <img src="img/logo-nowator.png" alt="Nowator - Biuro Podróży" class="footer__logo-img">
+      <p>Biuro Podróży Nowator &middot; ul. Marii Skłodowskiej-Curie 13, Białystok &middot; od 1990 roku</p>
+    </div>
+    <div class="footer__col">
+      <h4>Oferta</h4>
+      <a href="index.html#oferta">Wycieczki grupowe</a>
+      <a href="index.html#autokar">Wynajem autokaru</a>
+    </div>
+    <div class="footer__col">
+      <h4>Firma</h4>
+      <a href="index.html#historia">O nas</a>
+      <a href="index.html#kontakt">Kontakt</a>
+    </div>
+  </div>
+  <div class="wrap footer__bottom">
+    <span>&copy; 2026 Nowator. Wszystkie prawa zastrzeżone.</span>
+    <span>Propozycja redesignu - Impact Ads</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nowator - Biuro Podróży Białystok (propozycja redesignu)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="demo-badge">Propozycja redesignu - do akceptacji, nie wdrożone &middot; <a href="specyfikacja.html">Zobacz specyfikację projektową &rarr;</a></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a href="#top" class="nav__logo">
+      <img src="img/logo-nowator.png" alt="Nowator - Biuro Podróży" class="nav__logo-img">
+    </a>
+    <nav class="nav__links">
+      <div class="nav__item">
+        <a href="#oferta">Oferta</a>
+        <div class="nav__dropdown mega">
+          <div class="mega__links">
+            <a href="#oferta"><span>Wycieczki grupowe</span><small>Autokarowe wyjazdy po Europie</small></a>
+            <a href="#oferta"><span>Wycieczki indywidualne</span><small>Skrojone pod Wasz termin</small></a>
+            <a href="#oferta"><span>Pielgrzymki</span><small>Fatima, Medjugorie, Santiago</small></a>
+            <a href="#oferta"><span>Wycieczki szkolne</span><small>Zielone szkoły, klasowe</small></a>
+            <a href="#autokar"><span>Wynajem autokaru</span><small>Z kierowcą, bez pakietu</small></a>
+            <a href="#oferta"><span>Ubezpieczenia</span><small>Dobrane do trasy</small></a>
+          </div>
+          <a href="#kierunki" class="mega__feature">
+            <img src="img/grecja.jpg" alt="Kierunki">
+            <div class="mega__feature-scrim"></div>
+            <div class="mega__feature-body">
+              <span>Popularne teraz</span>
+              <h4>Kierunki na ten sezon</h4>
+              <p>Zobacz 60+ gotowych tras &rarr;</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <a href="#kierunki">Kierunki</a>
+      <a href="#autokar">Wynajem autokaru</a>
+      <a href="#historia">O nas</a>
+      <a href="#poradnik">Poradnik</a>
+    </nav>
+    <a href="#kontakt" class="btn btn--primary nav__cta">Zapytaj o wycieczkę</a>
+    <button class="nav__burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO + WYSZUKIWARKA -->
+  <section class="hero">
+    <img class="hero__img" src="img/grecja-xl.jpg" alt="" loading="eager">
+    <div class="hero__scrim"></div>
+    <div class="wrap" style="position:relative; z-index:1;">
+      <div class="hero__content reveal">
+        <h1>Wycieczki i pielgrzymki zaplanowane przez ludzi, nie algorytm.</h1>
+        <p>Wycieczki grupowe i indywidualne, pielgrzymki, wyjazdy szkolne, wynajem autokarów i ubezpieczenia - jedna organizacja z Białegostoku, 60&#43; gotowych tras, 35 lat doświadczenia.</p>
+      </div>
+    </div>
+    <div class="search reveal">
+      <div class="wrap">
+        <form class="search__card" onsubmit="event.preventDefault()">
+          <div class="search__field">
+            <svg class="search__field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-7.55 7-12.2A7 7 0 105 8.8C5 13.45 12 21 12 21z"/><circle cx="12" cy="8.5" r="2.5"/></svg>
+            <div class="search__field-text">
+              <label for="sw-dest">Kierunek</label>
+              <select id="sw-dest">
+                <option>Wszystkie kierunki</option>
+                <option>Grecja</option>
+                <option>Malta</option>
+                <option>Praga i Czechy</option>
+                <option>Wiedeń i Austria</option>
+                <option>Medjugorie</option>
+                <option>Budapeszt</option>
+              </select>
+            </div>
+          </div>
+          <div class="search__field">
+            <svg class="search__field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12l-8 8-8.5-8.5a3 3 0 010-4.24L7.26 3.5a3 3 0 014.24 0z"/><circle cx="14" cy="8" r="1.4"/></svg>
+            <div class="search__field-text">
+              <label for="sw-type">Typ wyjazdu</label>
+              <select id="sw-type">
+                <option>Wszystkie</option>
+                <option>Wycieczki grupowe</option>
+                <option>Wycieczki indywidualne</option>
+                <option>Pielgrzymki</option>
+                <option>Wycieczki szkolne</option>
+              </select>
+            </div>
+          </div>
+          <div class="search__field">
+            <svg class="search__field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="1"/><path d="M16 3v4M8 3v4M3.5 10h17"/></svg>
+            <div class="search__field-text">
+              <label for="sw-term">Termin</label>
+              <input type="text" id="sw-term" placeholder="np. wrzesień 2026">
+            </div>
+          </div>
+          <button type="submit" class="btn btn--primary search__submit">Szukaj wycieczki</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTA: KAFELKI -->
+  <section class="section" id="oferta">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <div>
+          <span class="eyebrow">Nasza oferta</span>
+          <h2>Sześć sposobów na wyjazd.</h2>
+        </div>
+      </div>
+      <div class="tiles">
+        <a href="#" class="tile reveal">
+          <img src="img/praga.jpg" alt="Wycieczki grupowe">
+          <div class="tile__scrim"></div>
+          <span class="tile__num">01</span>
+          <div class="tile__arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></div>
+          <div class="tile__body"><h3>Wycieczki grupowe</h3><span>Autokarowe wyjazdy po Europie</span></div>
+        </a>
+        <a href="#" class="tile reveal">
+          <img src="img/wieden.jpg" alt="Wycieczki indywidualne">
+          <div class="tile__scrim"></div>
+          <span class="tile__num">02</span>
+          <div class="tile__arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></div>
+          <div class="tile__body"><h3>Wycieczki indywidualne</h3><span>Skrojone pod Wasz termin</span></div>
+        </a>
+        <a href="#" class="tile reveal">
+          <img src="img/pielgrzymki.jpg" alt="Pielgrzymki">
+          <div class="tile__scrim"></div>
+          <span class="tile__num">03</span>
+          <div class="tile__arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></div>
+          <div class="tile__body"><h3>Pielgrzymki</h3><span>Fatima, Medjugorie, Santiago</span></div>
+        </a>
+        <a href="#kontakt" class="tile reveal" id="szkolne">
+          <img src="img/grecja.jpg" alt="Wycieczki szkolne">
+          <div class="tile__scrim"></div>
+          <span class="tile__num">04</span>
+          <div class="tile__arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></div>
+          <div class="tile__body"><h3>Wycieczki szkolne</h3><span>Zielone szkoły, klasowe</span></div>
+        </a>
+        <a href="#autokar" class="tile reveal">
+          <img src="img/autokar.jpg" alt="Wynajem autokaru">
+          <div class="tile__scrim"></div>
+          <span class="tile__num">05</span>
+          <div class="tile__arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></div>
+          <div class="tile__body"><h3>Wynajem autokaru</h3><span>Z kierowcą, bez pakietu</span></div>
+        </a>
+        <a href="#" class="tile reveal">
+          <img src="img/ubezpieczenia.jpg" alt="Ubezpieczenia turystyczne">
+          <div class="tile__scrim"></div>
+          <span class="tile__num">06</span>
+          <div class="tile__arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></div>
+          <div class="tile__body"><h3>Ubezpieczenia</h3><span>Dobrane do trasy</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- KIERUNKI: KAFELKI -->
+  <section class="section" id="kierunki" style="background:var(--surface-2)">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <div>
+          <span class="eyebrow">Kierunki</span>
+          <h2>Popularne trasy w naszej ofercie.</h2>
+        </div>
+        <a href="#" class="text-link">Zobacz wszystkie 60&#43; tras <span>&rarr;</span></a>
+      </div>
+      <div class="dest-tiles">
+        <a href="kierunek-grecja.html" class="tile reveal">
+          <img src="img/grecja.jpg" alt="Grecja">
+          <div class="tile__scrim"></div>
+          <div class="tile__arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></div>
+          <div class="tile__body"><h3>Grecja</h3><span>Santorini &middot; 8 dni</span></div>
+        </a>
+        <a href="#" class="tile reveal">
+          <img src="img/praga.jpg" alt="Praga i Czechy">
+          <div class="tile__scrim"></div>
+          <div class="tile__arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></div>
+          <div class="tile__body"><h3>Praga i Czechy</h3><span>UNESCO &middot; 4 dni</span></div>
+        </a>
+        <a href="#" class="tile reveal">
+          <img src="img/wieden.jpg" alt="Wiedeń i Austria">
+          <div class="tile__scrim"></div>
+          <div class="tile__arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></div>
+          <div class="tile__body"><h3>Wiedeń i Austria</h3><span>Alpy &middot; 4 dni</span></div>
+        </a>
+        <a href="#" class="tile reveal">
+          <img src="img/pielgrzymki.jpg" alt="Medjugorie">
+          <div class="tile__scrim"></div>
+          <div class="tile__arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></div>
+          <div class="tile__body"><h3>Medjugorie</h3><span>Pielgrzymka &middot; 7 dni</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section">
+    <div class="wrap">
+      <div class="stats reveal">
+        <span class="stats__eyebrow">Nowator w liczbach</span>
+        <div class="stats__grid">
+          <div class="stats__item">
+            <svg class="stats__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            <div class="stats__text">
+              <span class="stats__num" data-count="35"><span class="stats__num-val">35</span></span>
+              <span class="stats__label">lat na rynku</span>
+            </div>
+          </div>
+          <div class="stats__item">
+            <svg class="stats__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19l5-13 4 8 3-6 4 11"/></svg>
+            <div class="stats__text">
+              <span class="stats__num" data-count="60"><span class="stats__num-val">60</span><i>+</i></span>
+              <span class="stats__label">gotowych tras</span>
+            </div>
+          </div>
+          <div class="stats__item">
+            <svg class="stats__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+            <div class="stats__text">
+              <span class="stats__num" data-count="4"><span class="stats__num-val">4</span></span>
+              <span class="stats__label">formy wyjazdu</span>
+            </div>
+          </div>
+          <div class="stats__item">
+            <svg class="stats__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 8h1M14 8h1M9 12h1M14 12h1M9 21v-4h6v4"/></svg>
+            <div class="stats__text">
+              <span class="stats__num" data-count="1"><span class="stats__num-val">1</span></span>
+              <span class="stats__label">biuro, pełna obsługa</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats__divider"></div>
+
+        <div class="awards">
+          <span class="awards__label">35 lat wyróżnień w polskiej turystyce</span>
+          <div class="awards__track-wrap">
+          <div class="awards__track">
+            <a class="award-badge" href="https://www.bialystokonline.pl/biuro-podrozy-nowator-touroperator-wynajem-autokarow,firma,1447,62,04,1.html" target="_blank" rel="nofollow noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 01-10 0V4z"/><path d="M7 5H4a1 1 0 00-1 1 5 5 0 004 4.9M17 5h3a1 1 0 011 1 5 5 0 01-4 4.9"/></svg>
+              <div><strong>Złota &rarr; Diamentowa Malwa</strong><span>2002-2005</span></div>
+            </a>
+            <a class="award-badge" href="https://www.bialystokonline.pl/biuro-podrozy-nowator-touroperator-wynajem-autokarow,firma,1447,62,04,1.html" target="_blank" rel="nofollow noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 01-10 0V4z"/><path d="M7 5H4a1 1 0 00-1 1 5 5 0 004 4.9M17 5h3a1 1 0 011 1 5 5 0 01-4 4.9"/></svg>
+              <div><strong>Lider Polskiej Turystyki</strong><span>2006-2008</span></div>
+            </a>
+            <a class="award-badge" href="https://www.bialystokonline.pl/biuro-podrozy-nowator-touroperator-wynajem-autokarow,firma,1447,62,04,1.html" target="_blank" rel="nofollow noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+              <div><strong>Polski Orzeł Biznesu</strong><span>2016</span></div>
+            </a>
+            <a class="award-badge" href="https://www.bialystokonline.pl/biuro-podrozy-nowator-touroperator-wynajem-autokarow,firma,1447,62,04,1.html" target="_blank" rel="nofollow noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+              <div><strong>Orły Turystyki</strong><span>2018-2019</span></div>
+            </a>
+            <a class="award-badge" href="https://www.bialystokonline.pl/biuro-podrozy-nowator-touroperator-wynajem-autokarow,firma,1447,62,04,1.html" target="_blank" rel="nofollow noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.5L7 22l5-3 5 3-1.5-9.5"/></svg>
+              <div><strong>Osobowość Roku</strong><span>2019</span></div>
+            </a>
+            <a class="award-badge" href="https://www.bialystokonline.pl/biuro-podrozy-nowator-touroperator-wynajem-autokarow,firma,1447,62,04,1.html" target="_blank" rel="nofollow noopener" aria-hidden="true" tabindex="-1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 01-10 0V4z"/><path d="M7 5H4a1 1 0 00-1 1 5 5 0 004 4.9M17 5h3a1 1 0 011 1 5 5 0 01-4 4.9"/></svg>
+              <div><strong>Złota &rarr; Diamentowa Malwa</strong><span>2002-2005</span></div>
+            </a>
+            <a class="award-badge" href="https://www.bialystokonline.pl/biuro-podrozy-nowator-touroperator-wynajem-autokarow,firma,1447,62,04,1.html" target="_blank" rel="nofollow noopener" aria-hidden="true" tabindex="-1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 01-10 0V4z"/><path d="M7 5H4a1 1 0 00-1 1 5 5 0 004 4.9M17 5h3a1 1 0 011 1 5 5 0 01-4 4.9"/></svg>
+              <div><strong>Lider Polskiej Turystyki</strong><span>2006-2008</span></div>
+            </a>
+            <a class="award-badge" href="https://www.bialystokonline.pl/biuro-podrozy-nowator-touroperator-wynajem-autokarow,firma,1447,62,04,1.html" target="_blank" rel="nofollow noopener" aria-hidden="true" tabindex="-1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+              <div><strong>Polski Orzeł Biznesu</strong><span>2016</span></div>
+            </a>
+            <a class="award-badge" href="https://www.bialystokonline.pl/biuro-podrozy-nowator-touroperator-wynajem-autokarow,firma,1447,62,04,1.html" target="_blank" rel="nofollow noopener" aria-hidden="true" tabindex="-1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+              <div><strong>Orły Turystyki</strong><span>2018-2019</span></div>
+            </a>
+            <a class="award-badge" href="https://www.bialystokonline.pl/biuro-podrozy-nowator-touroperator-wynajem-autokarow,firma,1447,62,04,1.html" target="_blank" rel="nofollow noopener" aria-hidden="true" tabindex="-1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.5L7 22l5-3 5 3-1.5-9.5"/></svg>
+              <div><strong>Osobowość Roku</strong><span>2019</span></div>
+            </a>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WYNAJEM AUTOKARU -->
+  <section class="section" id="autokar">
+    <div class="wrap split">
+      <div class="split__media reveal">
+        <img src="img/autokar.jpg" alt="Autokar turystyczny Nowator">
+        <div class="split__chip"><strong>12-54</strong><span>miejsc we flocie</span></div>
+      </div>
+      <div class="split__body reveal">
+        <span class="eyebrow">Usługa</span>
+        <h2>Wynajem autokaru z kierowcą.</h2>
+        <p>Nie każdy wyjazd to gotowy pakiet wycieczkowy. Jeśli potrzebujesz wyłącznie przewozu grupy - na wyjazd integracyjny, mecz wyjazdowy czy uroczystość rodzinną - podstawiamy autokar z kierowcą, bez reszty oferty turystycznej.</p>
+        <ul class="check-list">
+          <li>Flota od busa 12-osobowego po autokar turystyczny</li>
+          <li>Kierowca, ubezpieczenie, pełna obsługa formalna</li>
+          <li>Wyjazdy krajowe i zagraniczne</li>
+        </ul>
+        <a href="#kontakt" class="btn btn--primary">Zapytaj o wolny termin</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- O NAS -->
+  <section class="section" id="historia" style="background:var(--surface-2)">
+    <div class="wrap split split--rev">
+      <div class="split__body reveal">
+        <span class="eyebrow">O nas</span>
+        <h2>Trzy dekady tras z Białegostoku.</h2>
+        <p>Nowator działa nieprzerwanie od 1990 roku - obsłużyliśmy pielgrzymki, wycieczki szkolne i wyjazdy grupowe kilku pokoleń mieszkańców Podlasia. To realne doświadczenie w logistyce wyjazdów autokarowych, nie marketingowe hasło.</p>
+        <a href="#" class="text-link">Poznaj naszą historię <span>&rarr;</span></a>
+      </div>
+      <div class="split__media reveal">
+        <img src="img/wieden.jpg" alt="Nowator - od 1990 roku">
+        <div class="split__chip"><strong>1990</strong><span>rok założenia</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORADNIK -->
+  <section class="section" id="poradnik">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <div>
+          <span class="eyebrow">Nowość</span>
+          <h2>Poradnik podróżnika.</h2>
+        </div>
+      </div>
+      <div class="notes-grid">
+        <a href="#" class="notes-card reveal">
+          <div class="notes-card__media"><img src="img/praga.jpg" alt="" loading="lazy"></div>
+          <div class="notes-card__body">
+            <span class="notes-card__tag">Wycieczki szkolne</span>
+            <h3>Ile kosztuje wycieczka szkolna - poradnik dla nauczycieli</h3>
+            <p>Realne widełki cenowe, na czym oszczędzić i jak rozliczyć wpłaty rodziców.</p>
+            <span class="notes-card__meta">5 min czytania<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></span>
+          </div>
+        </a>
+        <a href="#" class="notes-card reveal">
+          <div class="notes-card__media"><img src="img/pielgrzymki.jpg" alt="" loading="lazy"></div>
+          <div class="notes-card__body">
+            <span class="notes-card__tag">Pielgrzymki</span>
+            <h3>Jak przygotować się na pielgrzymkę zagraniczną</h3>
+            <p>Dokumenty, ubezpieczenie i lista rzeczy, o których łatwo zapomnieć przed wyjazdem.</p>
+            <span class="notes-card__meta">4 min czytania<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></span>
+          </div>
+        </a>
+        <a href="#" class="notes-card reveal">
+          <div class="notes-card__media"><img src="img/ubezpieczenia.jpg" alt="" loading="lazy"></div>
+          <div class="notes-card__body">
+            <span class="notes-card__tag">Ubezpieczenia</span>
+            <h3>Ubezpieczenie turystyczne - co obejmuje i jak wybrać</h3>
+            <p>Różnice między pakietami i sytuacje, w których standardowa polisa nie wystarczy.</p>
+            <span class="notes-card__meta">6 min czytania<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section class="section" id="kontakt" style="background:var(--surface-2)">
+    <div class="wrap contact__grid">
+      <div class="contact__text reveal">
+        <h2>Zaplanujmy Wasz wyjazd.</h2>
+        <p>Odpowiadamy na zapytania o wycieczki grupowe, pielgrzymki, wyjazdy szkolne i wynajem autokaru.</p>
+        <ul class="contact__info">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-7.55 7-12.2A7 7 0 105 8.8C5 13.45 12 21 12 21z"/><circle cx="12" cy="8.5" r="2.5"/></svg>
+            <span>ul. Marii Skłodowskiej-Curie 13<br>15-275 Białystok</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <a href="tel:+48533981100">+48 533 981 100</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+            <a href="mailto:nowator@nowator.com.pl">nowator@nowator.com.pl</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+            <span>Pon-Pt 9:00-17:00</span>
+          </li>
+        </ul>
+      </div>
+      <form class="contact__form reveal" onsubmit="event.preventDefault()">
+        <div class="field-row">
+          <div class="field field--float">
+            <input type="text" id="f-name" placeholder=" " required>
+            <label for="f-name">Imię i nazwisko</label>
+          </div>
+          <div class="field field--float">
+            <input type="tel" id="f-phone" placeholder=" " required>
+            <label for="f-phone">Telefon</label>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field field--float">
+            <input type="email" id="f-email" placeholder=" " required>
+            <label for="f-email">E-mail</label>
+          </div>
+          <div class="field field--select">
+            <label for="f-trip">Interesująca wycieczka</label>
+            <select id="f-trip">
+              <option value="">Wybierz kierunek</option>
+              <option>Grecja</option>
+              <option>Malta</option>
+              <option>Praga i Czechy</option>
+              <option>Wiedeń i Austria</option>
+              <option>Medjugorie</option>
+              <option>Budapeszt</option>
+              <option>Wycieczka szkolna</option>
+              <option>Pielgrzymka</option>
+              <option>Wynajem autokaru</option>
+              <option>Inna / jeszcze nie wiem</option>
+            </select>
+          </div>
+        </div>
+        <div class="field field--float">
+          <input type="text" id="f-term" placeholder=" ">
+          <label for="f-term">Preferowany termin (np. wrzesień 2026)</label>
+        </div>
+        <div class="field field--float">
+          <textarea id="f-msg" rows="3" placeholder=" "></textarea>
+          <label for="f-msg">Dodatkowe informacje</label>
+        </div>
+        <button type="submit" class="btn btn--primary btn--block">Wyślij zapytanie</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="footer__brand">
+      <img src="img/logo-nowator.png" alt="Nowator - Biuro Podróży" class="footer__logo-img">
+      <p>Biuro Podróży Nowator &middot; organizator turystyki z Białegostoku, na rynku od 1990 roku.</p>
+      <a href="https://facebook.com" class="footer__social" aria-label="Nowator na Facebooku" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.6h2.55l.38-2.96h-2.93v-1.9c0-.86.24-1.44 1.47-1.44h1.57V4.42C16.24 4.35 15.3 4.28 14.2 4.28c-2.3 0-3.87 1.4-3.87 3.98v2.22H7.77v2.96h2.56V21z"/></svg>
+      </a>
+    </div>
+    <div class="footer__col">
+      <h4>Oferta</h4>
+      <a href="#oferta">Wycieczki grupowe</a>
+      <a href="#oferta">Pielgrzymki</a>
+      <a href="#szkolne">Wycieczki szkolne</a>
+      <a href="#autokar">Wynajem autokaru</a>
+    </div>
+    <div class="footer__col">
+      <h4>Firma</h4>
+      <a href="#historia">O nas</a>
+      <a href="#poradnik">Poradnik</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="specyfikacja.html">Specyfikacja projektowa</a>
+    </div>
+    <div class="footer__col footer__col--contact">
+      <h4>Kontakt</h4>
+      <a href="tel:+48533981100">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        +48 533 981 100
+      </a>
+      <a href="mailto:nowator@nowator.com.pl">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+        nowator@nowator.com.pl
+      </a>
+      <a href="#" style="pointer-events:none">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-7.55 7-12.2A7 7 0 105 8.8C5 13.45 12 21 12 21z"/><circle cx="12" cy="8.5" r="2.5"/></svg>
+        ul. Marii Skłodowskiej-Curie 13, Białystok
+      </a>
+    </div>
+  </div>
+  <div class="wrap footer__bottom">
+    <span>&copy; 2026 Nowator. Wszystkie prawa zastrzeżone.</span>
+    <span>Propozycja redesignu - Impact Ads</span>
+  </div>
+</footer>
+
+<div class="trip-modal" id="tripModal" aria-hidden="true">
+  <div class="trip-modal__backdrop" data-modal-close></div>
+  <div class="trip-modal__panel" role="dialog" aria-modal="true" aria-labelledby="tripModalTitle">
+    <button class="trip-modal__close" type="button" data-modal-close aria-label="Zamknij">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="trip-modal__media">
+      <img src="img/grecja.jpg" alt="Grecja, Santorini">
+    </div>
+    <div class="trip-modal__body">
+      <span class="eyebrow">Najbliższy wolny termin</span>
+      <h3 id="tripModalTitle">Grecja - Santorini</h3>
+      <p class="trip-modal__date">Wyjazd 20 września 2026 &middot; 8 dni</p>
+      <p class="trip-modal__desc">Santorini, sanktuaria, kolebka cywilizacji - grupa ograniczona liczebnie, zapisy przyjmujemy do wyczerpania miejsc.</p>
+      <a href="#kontakt" class="btn btn--primary" data-modal-close>Zapytaj o miejsce</a>
+      <div class="trip-modal__meta">
+        <div><span>Forma wyjazdu</span><b>Wycieczka grupowa</b></div>
+        <div><span>Wyjazd z</span><b>Białegostoku</b></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
