@@ -1,0 +1,29 @@
+/* Layout polityki prywatności/RODO — spis treści (sticky) + sekcje treści.
+   Ta sama siatka wizualna co reszta strony (tokens.css), NIE osobny system. */
+.legal-layout{ display: grid; grid-template-columns: 260px 1fr; gap: 56px; align-items: start; }
+.legal-toc{ position: sticky; top: 100px; }
+.legal-toc__label{ font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 14px; }
+.legal-toc ol{ list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 2px; border-left: 1px solid var(--line); }
+.legal-toc a{ display: block; padding: 8px 0 8px 16px; margin-left: -1px; border-left: 1px solid transparent; font-size: 14px; font-weight: 600; color: var(--ink-soft); transition: color .18s ease, border-color .18s ease; }
+.legal-toc a:hover{ color: var(--indigo); }
+.legal-toc a.is-active{ color: var(--indigo); border-left-color: var(--indigo); }
+
+.legal-content{ min-width: 0; }
+.legal-block{ scroll-margin-top: 100px; }
+.legal-block + .legal-block{ margin-top: 40px; padding-top: 40px; border-top: 1px solid var(--line); }
+.legal-block h2{ font-size: 22px; color: var(--ink); margin-bottom: 12px; }
+.legal-block .iab-prose{ margin-top: 0; }
+
+.legal-updated{ display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--ink-faint); background: var(--surface-2); padding: 6px 14px; border-radius: 999px; margin-top: 18px; }
+
+.legal-admin-card{ background: var(--surface-2); border-radius: var(--radius); padding: 24px 28px; margin: 0 0 40px; display: flex; flex-direction: column; gap: 6px; }
+.legal-admin-card strong{ color: var(--indigo); font-size: 16px; }
+.legal-admin-card span{ font-size: 14px; color: var(--ink-soft); }
+
+@media (max-width: 860px){
+	.legal-layout{ grid-template-columns: 1fr; gap: 32px; }
+	.legal-toc{ position: static; }
+	.legal-toc ol{ flex-direction: row; flex-wrap: wrap; border-left: none; gap: 8px; }
+	.legal-toc a{ padding: 6px 12px; margin-left: 0; border: 1px solid var(--line); border-radius: 999px; }
+	.legal-toc a.is-active{ background: var(--indigo); color: #fff; border-color: var(--indigo); }
+}

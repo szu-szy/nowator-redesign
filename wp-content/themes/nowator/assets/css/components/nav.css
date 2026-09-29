@@ -1,0 +1,69 @@
+/* ============ NAV ============ */
+.nav{ border-bottom: 1px solid var(--line); background: rgba(255,255,255,.9); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; }
+.nav__inner{ display: flex; align-items: center; gap: 36px; padding-top: 16px; padding-bottom: 16px; }
+.nav__logo{ display: flex; align-items: center; margin-right: auto; }
+.nav__logo-img{ height: 40px; width: auto; display: block; }
+
+.nav__links{ display: flex; align-items: center; gap: 26px; }
+.nav__links > a, .nav__item > a{ font-size: 14.5px; font-weight: 600; color: var(--ink-soft); padding: 6px 0; transition: color .18s ease; }
+.nav__links > a:hover, .nav__item > a:hover{ color: var(--ink); }
+.nav__item{ position: relative; }
+.nav__dropdown{
+  position: absolute; top: 100%; left: -14px;
+  background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius-sm);
+  padding: 8px; min-width: 220px;
+  opacity: 0; visibility: hidden; transform: translateY(4px);
+  transition: opacity .16s ease, transform .16s ease;
+  box-shadow: 0 16px 32px rgba(23,19,53,0.12);
+}
+.nav__item:hover .nav__dropdown{ opacity: 1; visibility: visible; transform: translateY(0); }
+.nav__dropdown a{ display: block; padding: 9px 10px; font-size: 14px; font-weight: 500; border-radius: var(--radius-sm); color: var(--ink-soft); }
+.nav__dropdown a:hover{ background: var(--surface-2); color: var(--indigo); }
+
+/* ---- Mega menu (Oferta) ---- */
+.nav__dropdown.mega{
+  min-width: 620px; padding: 16px;
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 8px;
+}
+.mega__links{ display: flex; flex-direction: column; gap: 2px; }
+.mega__links a{ display: flex; flex-direction: column; padding: 11px 14px; border-radius: var(--radius-sm); color: var(--ink); transition: background .16s ease; }
+.mega__links a:hover{ background: var(--surface-2); }
+.mega__links a span{ font-size: 14.5px; font-weight: 700; }
+.mega__links a:hover span{ color: var(--indigo); }
+.mega__links a small{ font-size: 12px; color: var(--ink-faint); margin-top: 2px; font-weight: 500; }
+.mega__feature{ position: relative; border-radius: var(--radius-sm); overflow: hidden; display: block; }
+.mega__feature img{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.mega__feature:hover img{ transform: scale(1.05); }
+.mega__feature-scrim{ position: absolute; inset: 0; background: linear-gradient(0deg, rgba(15,12,36,.86) 0%, rgba(15,12,36,.2) 60%, rgba(15,12,36,.05) 100%); }
+.mega__feature-body{ position: absolute; left: 14px; right: 14px; bottom: 14px; color: #fff; }
+.mega__feature-body span{ font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--indigo-light); }
+.mega__feature-body h4{ font-size: 15.5px; font-weight: 800; margin: 4px 0 2px; }
+.mega__feature-body p{ font-size: 12px; color: rgba(255,255,255,.85); }
+
+.nav__burger{ display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+.nav__burger span{ width: 20px; height: 2px; background: var(--ink); display:block; }
+
+/* ============ MOBILE NAV ============ */
+@media (max-width: 860px){
+  .nav__links{
+    position: fixed; top: 0; right: 0; height: 100vh; width: min(82vw, 320px);
+    background: var(--bg); border-left: 1px solid var(--line);
+    flex-direction: column; align-items: flex-start; padding: 90px 24px 24px;
+    z-index: 90; gap: 4px; box-shadow: -20px 0 40px rgba(23,19,53,.12);
+    /* clip-path (not transform/right offset): position:fixed descendants escape
+       overflow:clip on ancestors that don't establish their own containing block,
+       so an off-viewport transform/offset silently widens document scrollWidth
+       even though nothing is visible — verified via scrollWidth, not screenshot.
+       See reference_fixed_offcanvas_scrollwidth_gotcha. */
+    clip-path: inset(0 0 0 100%);
+    transition: clip-path .3s ease;
+  }
+  .nav__links.is-open{ clip-path: inset(0 0 0 0%); }
+  .nav__item{ width: 100%; }
+  .nav__dropdown{ position: static; opacity:1; visibility:visible; transform:none; border:none; box-shadow:none; display:none; padding-left: 8px; min-width: 0; }
+  .nav__item.is-open .nav__dropdown{ display: block; }
+  .nav__dropdown.mega{ grid-template-columns: minmax(0,1fr); padding: 8px 0 8px 8px; min-width: 0; width: 100%; }
+  .mega__feature{ display: none !important; }
+  .nav__burger{ display: flex; }
+  .nav__cta{ display: none; }
+}

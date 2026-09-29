@@ -1,0 +1,61 @@
+/* ============ HERO + SEARCH ============ */
+.hero{ position: relative; min-height: 640px; display: flex; align-items: center; color: #fff; padding-bottom: 40px; }
+.hero__img{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero__scrim{
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(23,19,53,.35) 0%, rgba(23,19,53,.32) 45%, rgba(15,12,36,.82) 100%);
+}
+.hero__content{ position: relative; z-index: 1; max-width: 680px; padding: 0; }
+.hero__content h1{ font-size: clamp(34px, 5vw, 54px); color: #fff; text-shadow: 0 2px 24px rgba(6,4,18,.5); }
+.hero__content p{ font-size: 16.5px; line-height: 1.6; color: #F1EFFA; max-width: 52ch; margin: 20px 0 0; text-shadow: 0 2px 16px rgba(6,4,18,.45); }
+
+.search{
+  position: absolute; left: 0; right: 0; z-index: 2;
+  /* offset via `bottom`, not `transform`: .search also carries .reveal
+     (fade-up), and .js-reveal .reveal.is-visible{transform:translateY(0)}
+     has higher specificity (3 classes) than .search{transform:...} (1 class)
+     — always won and silently zeroed any transform-based sink offset,
+     verified via getComputedStyle. `bottom` doesn't collide with reveal. */
+  bottom: -44px;
+}
+.search__card{
+  background: #fff; border-radius: var(--radius);
+  box-shadow:
+    0 2px 6px rgba(16,13,43,.10),
+    0 16px 32px rgba(16,13,43,.16),
+    0 48px 88px rgba(16,13,43,.26);
+  padding: 10px;
+  display: grid; grid-template-columns: minmax(0,1fr); gap: 4px;
+}
+.search__field{
+  min-width: 0; padding: 13px 16px;
+  display: flex; align-items: center; gap: 12px;
+  transition: background .15s ease;
+}
+.search__field:hover, .search__field:focus-within{ background: var(--surface-2); }
+.search__field-icon{ width: 21px; height: 21px; color: var(--indigo); flex-shrink: 0; }
+.search__field-text{ display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1; }
+.search__field label{ font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-faint); }
+.search__field select, .search__field input{
+  border: none; background: none; font-family: var(--font); font-size: 14.5px; font-weight: 600; color: var(--ink);
+  padding: 0; min-width: 0; width: 100%;
+}
+.search__field select{
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%2367628E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 7.5l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right center; background-size: 15px;
+  padding-right: 20px; cursor: pointer;
+}
+.search__field input::placeholder{ color: var(--ink-faint); font-weight: 500; }
+.search__field select:focus, .search__field input:focus{ outline: none; }
+.search__submit{ margin: 4px; }
+@media (min-width: 861px){
+  .search__card{ grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1fr) auto; align-items: stretch; }
+  .search__field{ border-right: 1px solid var(--line); }
+  .search__field:nth-child(3){ border-right: none; }
+}
+@media (max-width: 860px){
+  .hero{ align-items: flex-start; min-height: 0; padding-top: 132px; padding-bottom: 300px; }
+  .search{ bottom: -28px; }
+  .search__submit{ width: calc(100% - 8px); }
+}

@@ -1,0 +1,26 @@
+/* ============================================================
+   TOKENS — paleta wyprowadzona wyłącznie z realnego logo klienta
+   (#312780, próbkowane pikselowo z refs/logo2015.png), skala jasności.
+   Wartości identyczne z zaakceptowanym demo (_demo/style.css, Rewizja 19).
+   ============================================================ */
+:root{
+  --bg: #FFFFFF;
+  --surface-2: #EAE9F7;
+  --ink: #100D2B;
+  --ink-soft: #4E4979;
+  --ink-faint: #635E8D;
+  --line: #E2E0F0;
+  --indigo: #312780;
+  --indigo-dark: #1E184E;
+  --indigo-light: #8B81DA;
+  --indigo-tint: #EAE9F7;
+
+  --font: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --container: 1280px;
+  --pad-desktop: 32px;
+  --pad-mobile: 20px;
+  --bp: 860px;
+  --radius: 2px;
+  --radius-sm: 2px;
+}

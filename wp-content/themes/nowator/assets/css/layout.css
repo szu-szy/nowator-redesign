@@ -1,0 +1,12 @@
+/* ============================================================
+   LAYOUT — kontener, rytm sekcji.
+   ============================================================ */
+.wrap{ max-width: var(--container); margin: 0 auto; padding: 0 var(--pad-mobile); position: relative; }
+@media (min-width: 861px){ .wrap{ padding: 0 var(--pad-desktop); } }
+
+.section{ padding: 64px 0; }
+.section__head{ display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 32px; flex-wrap: wrap; }
+.section__head h2{ font-size: clamp(26px, 3vw, 36px); }
+.section__head p{ color: var(--ink-soft); font-size: 15px; margin-top: 8px; }
+.section__head--tight{ margin-bottom: 24px; }
+@media (min-width: 861px){ .section{ padding: 88px 0; } }

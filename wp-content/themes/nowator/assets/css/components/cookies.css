@@ -1,0 +1,30 @@
+/**
+ * Modal zgody na cookies - natywny, bez wtyczki (2026-09-19: zastąpiono
+ * Cookie Law Info / CookieYes - wtyczka wymagała połączenia z kontem
+ * chmurowym żeby dostosować język/kolory, więc renderowała domyślny,
+ * angielski baner niepasujący do marki - patrz feedback_no_unilateral...
+ * to nie regres wsteczny, tylko usunięcie zależności od zewnętrznego
+ * konta, którego nie mamy). Ta sama architektura co w innych motywach
+ * "iab" tej sesji: modal + reopen FAB + focus trap + scroll-lock.
+ */
+.nowator-cookies { position: fixed; inset: 0; z-index: 400; display: flex; align-items: flex-end; justify-content: center; padding: 20px; }
+.nowator-cookies[hidden] { display: none; }
+.nowator-cookies__backdrop { position: absolute; inset: 0; background: rgba(16, 13, 43, .55); }
+.nowator-cookies__card { position: relative; width: 100%; max-width: 460px; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 24px 60px rgba(16,13,43,.22); padding: 28px; }
+.nowator-cookies__title { font-size: 19px; font-weight: 800; color: var(--ink); margin: 0 0 10px; }
+.nowator-cookies__desc { font-size: 14.5px; line-height: 1.55; color: var(--ink-soft); margin: 0 0 20px; }
+.nowator-cookies__actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.nowator-cookies__actions .btn { flex: 1 1 auto; justify-content: center; }
+.nowator-cookies__settings { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 10px; }
+.nowator-cookies__settings[hidden] { display: none; }
+.nowator-cookies__toggle { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13.5px; color: var(--ink); }
+.nowator-cookies__toggle small { display: block; font-weight: 400; color: var(--ink-faint); font-size: 12px; margin-top: 2px; }
+.nowator-cookies__link { margin-top: 14px; font-size: 12.5px; }
+.nowator-cookies__link a { color: var(--ink-faint); text-decoration: underline; }
+
+.nowator-cookies-reopen { position: fixed; left: 20px; bottom: 20px; z-index: 250; width: 44px; height: 44px; border-radius: 50%; background: var(--indigo); color: #fff; border: 0; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(49,39,128,.35); cursor: pointer; }
+.nowator-cookies-reopen[hidden] { display: none; }
+.nowator-cookies-reopen:hover { background: var(--indigo-dark); }
+
+/* Otwarty drawer/modal ofertowy zasłania FAB cookies, żeby się nie przebijał */
+body:has(.nowator-cookies:not([hidden])) { overflow: hidden; }
