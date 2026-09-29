@@ -72,7 +72,7 @@ ul,ol{ margin: 0; padding: 0; list-style: none; }
   font-size: 14.5px; font-weight: 500; color: var(--ink-faint);
   pointer-events: none; transition: top .16s ease, font-size .16s ease, color .16s ease;
 }
-.field--float input:focus, .field--float textarea:focus{ outline: none; border-color: var(--indigo); }
+.field--float input:focus, .field--float textarea:focus{ outline: none; border-color: var(--indigo); box-shadow: 0 0 0 3px var(--indigo-tint); }
 .field--float input:focus + label,
 .field--float input:not(:placeholder-shown) + label,
 .field--float textarea:focus + label,
@@ -91,8 +91,18 @@ ul,ol{ margin: 0; padding: 0; list-style: none; }
   background-repeat: no-repeat; background-position: right 14px center; background-size: 15px;
   transition: border-color .18s ease;
 }
-.field--select select:focus{ outline: none; border-color: var(--indigo); }
+.field--select select:focus{ outline: none; border-color: var(--indigo); box-shadow: 0 0 0 3px var(--indigo-tint); }
 @media (min-width: 640px){ .field-row{ grid-template-columns: minmax(0,1fr) minmax(0,1fr); } }
+
+/* Zgoda RODO (CF7 acceptance): checkbox 18px w kolorze marki, etykieta wyrównana do góry. */
+.iab-rodo{ margin: 4px 0 16px; font-size: 13.5px; line-height: 1.5; color: var(--ink-soft); }
+.iab-rodo .wpcf7-list-item{ margin: 0; display: block; }
+.iab-rodo .wpcf7-list-item label{ display: flex; align-items: flex-start; gap: 10px; cursor: pointer; }
+.iab-rodo input[type="checkbox"]{ width: 18px; height: 18px; flex-shrink: 0; margin: 1px 0 0; accent-color: var(--indigo); cursor: pointer; }
+
+/* Widoczny focus klawiatury (WCAG 2.4.7) - wspólny dla linków, przycisków i pól. */
+:focus-visible{ outline: 2px solid var(--indigo); outline-offset: 2px; }
+.field--float input:focus-visible, .field--float textarea:focus-visible, .field--select select:focus-visible{ outline: 2px solid var(--indigo); outline-offset: 0; }
 
 /* ============ REVEAL ============ */
 .reveal{ transition: opacity .5s ease-out, transform .5s ease-out; }

@@ -48,6 +48,7 @@
 }
 .search__field input::placeholder{ color: var(--ink-faint); font-weight: 500; }
 .search__field select:focus, .search__field input:focus{ outline: none; }
+.search__field select:focus-visible, .search__field input:focus-visible{ outline: 2px solid var(--indigo); outline-offset: -2px; }
 .search__submit{ margin: 4px; }
 @media (min-width: 861px){
   .search__card{ grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1fr) auto; align-items: stretch; }
