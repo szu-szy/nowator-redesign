@@ -1,0 +1,35 @@
+/* ============================================================
+   ADMIN — style dla meta boxów wp-admin (CPT/strony). Ładowane TYLKO
+   w wp-admin (inc/enqueue.php). Zero inline style="" w PHP meta boxów.
+   ============================================================ */
+
+.iab-admin-field { margin: 0 0 14px; }
+.iab-admin-field--tight { margin: 0 0 10px; }
+.iab-admin-label { display: block; font-weight: 600; margin-bottom: 4px; }
+.iab-admin-hr { margin: 16px 0; }
+.iab-admin-mt-8 { margin-top: 8px; }
+.iab-admin-hidden { display: none; }
+.iab-admin-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.iab-admin-input--sm { width: 120px; }
+.iab-admin-input--md { width: 140px; }
+
+.iab-admin-empty { color: #a7aaad; }
+.iab-admin-muted-inline { color: #999; }
+
+.iab-admin-table { border: 0; }
+.iab-admin-table th { width: 240px; color: #50575e; font-weight: 600; }
+.iab-admin-table td { font-size: 14px; color: #1d2327; }
+
+.iab-admin-stat-num { font-size: 28px; font-weight: 700; margin: 0; }
+.iab-admin-stat-label { font-size: 13px; font-weight: 400; color: #666; }
+.iab-admin-list { margin: 12px 0; }
+
+/* Repeater ("W cenie" / "Kroki" / "FAQ" na ekranie edycji strony). */
+.iab-rep { margin: 0 0 22px; padding: 14px; border: 1px solid #dcdcde; border-radius: 6px; background: #fff; }
+.iab-rep h4 { margin: 0 0 10px; }
+.iab-rep__row { display: flex; gap: 8px; margin-bottom: 8px; align-items: center; }
+.iab-rep__row--stacked { align-items: flex-start; flex-direction: column; gap: 6px; border-bottom: 1px solid #dcdcde; padding-bottom: 12px; margin-bottom: 12px; }
+.iab-rep__field { flex: 1; }
+.iab-rep__field--label { flex: 0 0 32%; }
+.iab-rep__rm { flex: none; color: #b32d2e; }
