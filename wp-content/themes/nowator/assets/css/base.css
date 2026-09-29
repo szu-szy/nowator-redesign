@@ -36,6 +36,14 @@ ul,ol{ margin: 0; padding: 0; list-style: none; }
 .btn--outline:hover{ border-color: var(--ink); background: var(--surface-2); }
 .btn--block{ width: 100%; }
 .btn--on-dark{ background: #fff; color: var(--indigo); }
+/* CF7 renders [submit] as <input> nested inside our .btn wrapper - make the input invisible chrome-wise */
+.btn .wpcf7-submit{
+  all: unset; display: block; width: 100%; box-sizing: border-box;
+  font: inherit; color: inherit; text-align: center; cursor: pointer;
+}
+.btn .wpcf7-submit:disabled{ cursor: not-allowed; }
+.btn:has(.wpcf7-submit:disabled){ opacity: .6; cursor: not-allowed; }
+.btn .wpcf7-spinner{ margin: 0 0 0 8px; }
 
 .text-link{
   display: inline-flex; align-items: center; gap: 7px;
