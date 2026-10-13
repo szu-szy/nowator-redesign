@@ -143,6 +143,10 @@ ul,ol{ margin: 0; padding: 0; list-style: none; }
 .iab-prose strong{ color: var(--indigo); font-weight: 700; }
 .iab-prose a{ color: var(--indigo); text-decoration: underline; text-underline-offset: 3px; }
 .iab-prose img{ border-radius: var(--radius); margin: 20px 0; }
+.iab-prose .wp-block-gallery.has-nested-images{ display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; margin-top: 20px; }
+.iab-prose .wp-block-gallery.has-nested-images figure.wp-block-image:not(#nowator-gallery){ width: auto; margin: 0; }
+.iab-prose .wp-block-gallery.has-nested-images figure.wp-block-image:not(#nowator-gallery) img{ margin: 0; width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; }
+@media (min-width: 768px){ .iab-prose .wp-block-gallery.has-nested-images{ grid-template-columns: repeat(3, minmax(0,1fr)); } }
 .iab-prose ul{ list-style: none; padding-left: 0; }
 .iab-prose ul > li{ position: relative; padding-left: 22px; }
 .iab-prose ul > li::before{ content: ""; position: absolute; left: 2px; top: .65em; width: 6px; height: 6px; border-radius: 50%; background: var(--indigo); }

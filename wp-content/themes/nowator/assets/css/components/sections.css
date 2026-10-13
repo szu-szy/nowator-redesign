@@ -1,0 +1,74 @@
+/* ============ SEKCJE PODSTRON: fakty, trasa, dlaczego my, kroki, FAQ (13.10.2026) ============ */
+
+/* Hero kierunku / typu: przycisk pod wstępem */
+.page-hero__cta{ margin-top: 24px; }
+
+/* Pasek faktów pod hero wycieczki */
+.trip-facts{ background: var(--surface-2); border-bottom: 1px solid var(--line); }
+.trip-facts__list{ display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); }
+.trip-facts__list li{ display: flex; align-items: center; gap: 12px; padding: 20px 16px 20px 0; min-width: 0; }
+.trip-facts__list svg{ width: 24px; height: 24px; color: var(--indigo); flex-shrink: 0; }
+.trip-facts__list span{ display: flex; flex-direction: column; gap: 4px; font-size: 16px; font-weight: 700; color: var(--ink); line-height: 1.3; min-width: 0; overflow-wrap: anywhere; }
+.trip-facts__list small{ font-size: 12px; font-weight: 600; color: var(--ink-faint); text-transform: uppercase; letter-spacing: .04em; }
+@media (min-width: 861px){
+  .trip-facts__list{ grid-template-columns: repeat(4, minmax(0,1fr)); }
+  .trip-facts__list li{ padding: 24px 24px 24px 0; }
+  .trip-facts__list li + li{ padding-left: 24px; border-left: 1px solid var(--line); }
+}
+
+/* Trasa: punkty połączone linią */
+.trip-route{ margin-bottom: 40px; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); }
+.trip-route__list{ display: flex; flex-wrap: wrap; gap: 8px 0; counter-reset: route; }
+.trip-route__list li{ display: flex; align-items: center; font-size: 16px; font-weight: 700; color: var(--ink); }
+.trip-route__list li + li::before{ content: ""; width: 24px; height: 2px; margin: 0 12px; background: var(--indigo-light); }
+
+/* Karta ceny: telefon pod przyciskiem */
+.booking-card__phone{ display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 16px; font-size: 16px; font-weight: 700; color: var(--indigo); }
+.booking-card__phone svg{ width: 16px; height: 16px; }
+.booking-card__phone:hover{ text-decoration: underline; text-underline-offset: 4px; }
+
+/* Siatka kart: 3 kolumny na szerokich ekranach (listy kierunków / typów) */
+@media (min-width: 1100px){ .trip-cards.trip-cards--3{ grid-template-columns: repeat(3, minmax(0,1fr)); } }
+
+/* Dlaczego Nowator */
+.why-grid{ display: grid; grid-template-columns: minmax(0,1fr); gap: 0; border-top: 1px solid var(--line); }
+.why-item{ padding: 28px 0; border-bottom: 1px solid var(--line); }
+.why-item__icon{ display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: var(--radius); background: var(--surface-2); color: var(--indigo); margin-bottom: 16px; }
+.why-item__icon svg{ width: 24px; height: 24px; }
+.why-item h3{ font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+.why-item p{ font-size: 16px; line-height: 1.6; color: var(--ink-soft); }
+@media (min-width: 640px){
+  .why-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); column-gap: 40px; }
+}
+@media (min-width: 1100px){
+  .why-grid{ grid-template-columns: repeat(4, minmax(0,1fr)); column-gap: 32px; border-top: 0; }
+  .why-item{ border-bottom: 0; border-top: 2px solid var(--indigo); padding-top: 32px; }
+}
+
+/* Jak to działa */
+.steps{ display: grid; grid-template-columns: minmax(0,1fr); gap: 16px; list-style: none; }
+.steps__item{ position: relative; padding: 28px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); }
+.steps__num{ display: block; font-size: 32px; font-weight: 800; color: var(--indigo-light); line-height: 1; margin-bottom: 16px; }
+.steps__item h3{ font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+.steps__item p{ font-size: 16px; line-height: 1.6; color: var(--ink-soft); }
+@media (min-width: 640px){ .steps{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (min-width: 1100px){ .steps{ grid-template-columns: repeat(4, minmax(0,1fr)); gap: 20px; } }
+
+/* FAQ */
+.faq__list{ max-width: 880px; border-top: 1px solid var(--line); }
+.faq__item{ border-bottom: 1px solid var(--line); }
+.faq__item summary{
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 20px 0; font-size: 20px; font-weight: 700; color: var(--ink); cursor: pointer; list-style: none;
+}
+.faq__item summary::-webkit-details-marker{ display: none; }
+.faq__item summary::after{
+  content: ""; flex-shrink: 0; width: 12px; height: 12px;
+  border-right: 2px solid var(--indigo); border-bottom: 2px solid var(--indigo);
+  transform: rotate(45deg); transition: transform .2s ease;
+}
+.faq__item[open] summary::after{ transform: rotate(-135deg); }
+.faq__item summary:hover{ color: var(--indigo); }
+.faq__item summary:focus-visible{ outline: 2px solid var(--indigo); outline-offset: 4px; }
+.faq__item p{ padding: 0 0 20px; font-size: 16px; line-height: 1.7; color: var(--ink-soft); max-width: 72ch; }
+@media (prefers-reduced-motion: reduce){ .faq__item summary::after{ transition: none; } }
