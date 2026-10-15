@@ -40,6 +40,8 @@
 .footer__col a{ display: block; padding: 5px 0; font-size: 14px; font-weight: 600; color: var(--indigo-dark); transition: color .18s ease; }
 .footer__col a:hover{ color: var(--indigo); text-decoration: underline; text-underline-offset: 3px; }
 .footer__col--contact a{ display: flex; align-items: center; gap: 9px; }
+.footer__label{ margin: 16px 0 4px; font-size: 12px; font-weight: 700; color: var(--indigo); }
+.footer__title + .footer__label{ margin-top: 0; }
 .footer__col--contact a.iab-static{ cursor: default; pointer-events: none; }
 .footer__col--contact a.iab-static:hover{ color: inherit; text-decoration: none; }
 .footer__col--contact svg{ width: 15px; height: 15px; flex-shrink: 0; color: var(--indigo); }
