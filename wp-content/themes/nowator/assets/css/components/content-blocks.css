@@ -17,6 +17,13 @@
 .check-list li:last-child{ border-bottom: 1px solid var(--line); }
 .check-list li::before{ content: ""; position: absolute; left: 2px; top: 19px; width: 6px; height: 6px; border-radius: 50%; background: var(--indigo); }
 @media (min-width: 861px){ .split{ grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 64px; } .split--rev .split__media{ order: 2; } }
+/* Przyciski sekcji split: główny + telefon (Wynajem autokaru, klient 15.10) */
+.split__actions{ display: flex; flex-wrap: wrap; gap: 12px; }
+.split__phone svg{ width: 16px; height: 16px; flex-shrink: 0; }
+/* Wyróżniona sekcja (Wynajem autokaru): tło, większe zdjęcie autokaru */
+.split-featured{ background: var(--surface-2); }
+.split-featured .split__media img{ aspect-ratio: 16/10; }
+@media (min-width: 861px){ .split-featured .split{ grid-template-columns: minmax(0,7fr) minmax(0,5fr); gap: 56px; } }
 
 /* ============ NOTES (Poradnik/Aktualności) - article cards ============ */
 .notes-grid{ display: grid; grid-template-columns: minmax(0,1fr); gap: 24px; }
