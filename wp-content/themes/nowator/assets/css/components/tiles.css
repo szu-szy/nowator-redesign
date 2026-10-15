@@ -12,6 +12,9 @@
 .tile__body{ position: absolute; left: 18px; right: 56px; bottom: 16px; color: #fff; }
 .tile__body h3{ font-size: 17px; }
 .tile__body span{ font-size: 12.5px; color: rgba(255,255,255,.8); display: block; margin-top: 4px; }
+/* Opisy typów wyjazdu są długie: max 3 linie, a w 2 kolumnach na telefonie tylko tytuł (inaczej tekst wchodzi na tytuł i numer). */
+.tiles .tile__body span{ display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+@media (max-width: 639px){ .tiles .tile__body span{ display: none; } }
 .tile__num{ position: absolute; top: 14px; left: 16px; font-size: 12px; font-weight: 700; color: rgba(255,255,255,.85); background: rgba(15,12,36,.32); backdrop-filter: blur(4px); padding: 4px 9px; border-radius: var(--radius-sm); }
 .tile::before{
   content: ""; position: absolute; top: 0; left: 0; width: 26px; height: 26px;
