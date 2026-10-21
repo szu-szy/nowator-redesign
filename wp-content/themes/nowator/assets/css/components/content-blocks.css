@@ -23,6 +23,8 @@
 /* Wyróżniona sekcja (Wynajem autokaru): tło, większe zdjęcie autokaru */
 .split-featured{ background: var(--surface-2); }
 .split-featured .split__media img{ aspect-ratio: 16/10; }
+/* Pionowe zdjęcie przodu autokaru: 4:3 mieści lusterka i zderzak, kadr od lusterek w dół */
+.split__media img.split__img--front{ aspect-ratio: 4/3; object-position: 50% 44%; }
 @media (min-width: 861px){ .split-featured .split{ grid-template-columns: minmax(0,7fr) minmax(0,5fr); gap: 56px; } }
 
 /* ============ NOTES (Poradnik/Aktualności) - article cards ============ */
